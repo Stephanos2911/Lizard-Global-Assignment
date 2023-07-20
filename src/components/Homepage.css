@@ -1,0 +1,231 @@
+body{
+    background-color: rgb(230, 230, 230);
+    font-family: 'Helvetica', Arial, sans-serif;
+}
+
+.Navigation-Bar{
+    width: 100%;
+    height: 70px;
+    background-color: blueviolet;
+
+    display: flex;
+    align-items: center;
+}
+
+
+.FullPage-Container{
+    margin-top: 15px;
+    margin-bottom: 15px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.Left-Container{
+    width:  18%;
+    background-color: rgba(137, 43, 226, 0.179);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Hide the default arrow icon */
+.select-box {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    /* Add custom arrow icon */
+    background-repeat: no-repeat;
+    background-position: right center;
+    /* Add custom styles for the drop-down menu */
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+
+  /* Style the drop-down menu options */
+  .select-box option {
+    padding: 8px;
+    display: flex;
+    justify-content: center;
+  }
+
+
+
+label{
+    position: relative;
+    top: 20px;
+}
+
+.select-box{
+    width: 200px;
+    position: relative;
+    top: 30px;
+}
+
+
+/* The use of flexbox allows elements to be structured along a axis (horizontal, vertical),
+which is ideal for this vertical approach to showing posts (similar to Instagram,Facebook,Reddit).
+Every element inside this Post-Container will simply be put under the next one.
+Since there is no definitive height of the page determined, displaying the appended posts can go on forever. */
+.Post-Container{
+    width: 950px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: rgb(240, 240, 240);
+    border-radius: 15px;
+}
+
+/* Post related Styling */
+
+.Single-Post{
+    /* Positioning */
+    align-self: center;
+    width: 80%;
+    /* margin allows us in this situation to add little space in between each post  */
+    margin-top: 15px;
+    /* Beauty */
+    background-color: rgb(255, 255, 255);
+
+    border-radius: 15px;
+    border: 3px solid blueviolet;
+}
+
+/* Seperate name container so Picture and name can be set right beisdes each other */
+.Picture-Name-Container{
+    display: flex;
+    height: 70px;
+    flex-direction: row;
+    background-color: blueviolet;
+    border-radius: 12px;
+}
+
+/* On hover, make the button a bit darker purple. */
+.Picture-Name-Container:hover {background-color: rgb(110, 35, 181)}
+
+.Picture-Name-Container:active {
+  background-color: rgb(110, 35, 181);
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+.Profile-Picture{
+    border-radius: 18px;
+}
+
+.Author-Name{
+    margin-left: 20px;
+    align-self: center;
+    color: white;
+    font-weight: 300;
+}
+
+.title-date-container{
+    display: flex;
+    height: 100px;
+    flex-direction: column;
+    border-radius: 15px;
+}
+
+.post-title{
+    position: relative;
+    align-self: center;
+    font-weight: 400;
+}
+
+.Publish-Date{
+    position: relative;
+    align-self: flex-start;
+    bottom: 10px;
+    left: 10px;
+    font-size: 14px;
+}
+
+.summary-container{
+    background-color: rgb(225, 225, 225);
+    border-radius: 8px;
+}
+
+.summary-text{
+    padding: 30px;
+}
+
+.categories-overview{
+    background-color: rgb(255, 255, 255);
+    height: 60px;
+    width: 100%;
+    border-radius: 12px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.category-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90%;
+    margin: 8px;
+    text-align: center;
+
+    background-color: blueviolet;
+    width: 180px;
+    border: none;
+    border-radius: 12px;
+
+    position: relative;
+    bottom: 6px;
+}
+
+/* On hover, make the box a bit darker purple. */
+.category-box:hover {background-color: rgb(110, 35, 181)}
+
+.category-name{
+    color: white;
+    font-weight: 200;
+    font-size: 16px;
+}
+
+.Load-More-Button{
+    background-color: blueviolet; /* Light green color */
+    color: white;
+    font-weight: bold;
+    width: 40%;
+    font-size: 15px;
+    height: 40px;
+    align-self: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    border: none;
+}
+
+/* On hover, make the button a bit darker purple. */
+.Load-More-Button:hover {background-color: rgb(110, 35, 181)}
+
+.Load-More-Button:active {
+  background-color: rgb(110, 35, 181);
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+
+.Right-Container{
+    width: 18%;
+    background-color: rgba(137, 43, 226, 0.179);
+    border-radius: 15px;
+}
+
+
+footer{
+    width: 100%;
+    height: 75px;
+    background-color: blueviolet;
+}
