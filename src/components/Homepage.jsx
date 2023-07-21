@@ -1,6 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import './Homepage.css' 
 
+//The Homepage consists of 3 consecutive containers: container with the category-filter(1) -> the vertical list of posts(2) -> 
+//an empty container, other features could be added here.
+
+//(1): the left container contains a (multiple) select box, allowing the user to filter the middle posts list on the selected category.
+//     The list of categories to choose from is dynamically loaded from the total list of posts, meaning only categories with actual posts 
+//     present in the front-end will be able to be chosen from. If instead hard-coded, users can select a category with no posts present, resulting in an empty post list.
+
+//(2): On startup, the useEffect Hook makes an api call to the MirageJS Api with the current page. This first call forms the start of the posts-state.
+//     With each API call, the currentPage variable will be incremented. After pressing the 'load-more' button on the bottom,
+//     the API call is made again with the currentPage. THe response (post-objects in JSON format) are appended to the posts-state. 
+//     (More info about the API is inside the index.js)
 
 //function to reformat the raw dateTime to a simple D-M-Y format.
 function formatDate(dateString) {
@@ -52,6 +63,7 @@ function Homepage() {
     setSelectedCategories(selectedOptions);
   };
 
+  //Filter the Posts based on the current selected category
   const filteredPosts = selectedCategories.includes('All')
     ? posts // Show all posts if 'All' category is selected
     : posts.filter((post) => {
@@ -69,7 +81,7 @@ function Homepage() {
         <select className='select-box' value={selectedCategories} onChange={handleCategoryChange} multiple size={7}>
             {/* The category options are extracted from the current present Posts inside Posts. 
             We could simply hardcode all the categories, but that means categorie-options will be present whilst not having any posts present to filter them on.
-            In this case it's a design choice, but i would rather consolidate with fellow developers (or the designer of the system) on the matter.*/}
+            In this case it's a design choice, but i would rather consolidate with fellow developers (or the designer of the page/system) on the matter.*/}
             <option key='All' value='All'>All</option>
             {allCategories.map((category) => (
                 <option key={category} value={category}>{category}</option>
