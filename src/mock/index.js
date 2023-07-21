@@ -6,11 +6,8 @@ createServer({
   routes() {
     this.namespace = 'api';
 
-    this.get('/posts', (schema, request) => {
-      //Pagination can be done on the front (calling a big chunk and slowly introducing more as the user progresses), 
-      //back(Calling the API for chunks at a time) or both. I myself had learned about the topic in Course, but had not yet implemented it in a program.
-      
-      //The API receives the current page index, on which it calculates the starting index for slicing of the posts. 
+    this.get('/posts', (schema, request) => {  
+      //The Endpoint receives the current page index, on which it calculates the starting index for slicing of the posts. 
       //The end index is simply the starting index + the amount of posts returned by every api call.
       
       const { page } = request.queryParams;
